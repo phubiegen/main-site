@@ -1,0 +1,44 @@
+import React from "react";
+
+export default function TextLogoJs() {
+  return (
+    <div>
+      <svg
+        width="154px"
+        height="25px"
+        viewBox="0 0 154 42"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xlink="http://www.w3.org/1999/xlink"
+      >
+        <desc>Created with Sketch.</desc>
+        <defs></defs>
+        <g
+          id="Page-1"
+          stroke="none"
+          stroke-width="1"
+          fill="none"
+          fill-rule="evenodd"
+          font-style="expanded"
+          font-size="72"
+          font-family="BradleyHandITCTT-Bold, Bradley Hand"
+          font-weight="bold"
+        >
+          <g
+            id="iPad-Pro-Portrait"
+            transform="translate(-235.000000, -629.000000)"
+          >
+            <text id="Phubie">
+              <tspan x="236" y="668" fill="#FF8629">
+                P
+              </tspan>
+              <tspan x="277.04" y="668" font-size="48" fill="#D5D3D2">
+                hubie
+              </tspan>
+            </text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  );
+}
