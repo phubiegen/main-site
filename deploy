@@ -1,0 +1,10 @@
+ssh root@128.199.25.210 <<EOF  
+ pwd
+ cd ~/home/boanerges/phubie/frontend/
+ sudo rm -rf main-site
+ git clone https://github.com/phubiegen/main-site.git
+ cd main/
+ npm install   
+ npm run build
+ exit      
+EOF
