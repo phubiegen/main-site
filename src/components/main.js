@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Header from "./header/header";
 import { withTranslation } from "react-i18next";
 import AdvertBody from "./advert/advertBody";
+import Footer from "./footer/footer";
 
 export default class Main extends Component {
   render() {
@@ -19,6 +20,7 @@ export default class Main extends Component {
         </Helmet>
         <Header />
         <AdvertBody />
+        <Footer />
       </div>
     );
   }
