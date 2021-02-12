@@ -3,7 +3,7 @@ import { Grid, Button, Icon, Divider } from "@material-ui/core";
 import { Input, Button as Btn, Icon as Ic } from "semantic-ui-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import MapVector from "./mapvector4.jpg";
+import MapVector from "./mapvector6.svg";
 
 const color = "#e35f17";
 const textColor = "#000";
@@ -17,7 +17,7 @@ export default function Footer() {
         backgroundColor: "#f5f5f5",
         padding: "30px",
         backgroundImage: `url(${MapVector})`,
-        backgroundSize: "cover",
+        backgroundSize: "100% 100%",
         backgroundRepeat: "no-repeat",
       }}
     >
