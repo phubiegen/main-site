@@ -3,6 +3,8 @@ import "./advertBody.css";
 import { motion } from "framer-motion";
 import { Fade, Slide } from "react-reveal";
 import { Grid, makeStyles } from "@material-ui/core";
+import { Icon, Input } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -93,12 +95,12 @@ export default function AdvertBody() {
           height: "100%",
           background: "rgba(0, 0, 0, 0.7)",
           paddingTop: "170px",
-          paddingLeft: "30px",
+          paddingLeft: "10px",
           paddingRight: "40px",
         }}
       >
-        <Grid container>
-          <Grid item xs={12} sm={8}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} style={{ marginBottom: "50px" }}>
             <Fade left>
               <h1 className={classes.text}>
                 Online food ordering system for you
@@ -108,7 +110,21 @@ export default function AdvertBody() {
               <h1 className={classes.text2}>{content[values]}</h1>
             </Slide>
           </Grid>
-          <Grid item xs={false} sm={4}></Grid>
+          <Grid item xs={12} sm={6} style={{ textAlign: "center" }}>
+            <Input
+              icon="map marker alternate"
+              iconPosition="left"
+              placeholder="Enter delivery address"
+              action={{
+                color: "teal",
+                labelPosition: "right",
+                icon: "arrow circle right",
+                content: "Find Food",
+              }}
+            />
+            <br />
+            <Link to="/login">Signin</Link>
+          </Grid>
         </Grid>
       </div>
 
