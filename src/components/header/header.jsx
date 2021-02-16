@@ -89,14 +89,15 @@ export default function Header() {
           <Grid container>
             <Grid item xs={6} style={{ textAlign: "right" }}>
               <Link to="/">
-                <Image
+                Logo
+                {/* <Image
                   as="div"
                   src={phubieLogo}
                   size="tiny"
                   alt="phubie logo"
                   rounded
                   style={{ width: "120px", height: "65px", textAlign: "right" }}
-                />
+                /> */}
               </Link>
             </Grid>
           </Grid>
