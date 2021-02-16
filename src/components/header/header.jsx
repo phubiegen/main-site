@@ -1,15 +1,45 @@
 import {
   Button,
   Grid,
-  Menu,
-  MenuItem,
-  fade,
+  // Menu,
+  // MenuItem,
+  // fade,
   makeStyles,
 } from "@material-ui/core";
-import React, { Component } from "react";
-import { Dropdown, Icon, Image, Button as BTN, Tab } from "semantic-ui-react";
-import TextLogoJs from "../icons/textLogoJs";
-import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState } from "react";
+import { Image } from "semantic-ui-react";
+import {
+  Menu,
+  Dropdown,
+  Button as Btn,
+  Space,
+  Tabs,
+  Drawer,
+  Form,
+  Input,
+  Select,
+} from "antd";
+import { Link } from "react-router-dom";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { oranges } from "../colors";
+import phubieLogo from "../icons/phubieOrange.png";
+import phubieP from "../icons/phubieP.png";
+import Login from "../login/login";
+import Signup from "../signup/signup";
+
+{
+  /* <MenuOutlined />
+Men */
+}
+
+const MenuChange = (props) => {
+  return (
+    <Menu>
+      <Menu.Item onClick={props.clickLogin}>Login</Menu.Item>
+      <Menu.Item onClick={props.clickSignup}>Signup</Menu.Item>
+    </Menu>
+  );
+};
 
 const panes = [
   {
@@ -38,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("xs")]: {
       display: "inline-block",
       color: "white",
-      backgroundColor: "#e35f17",
+      backgroundColor: `${oranges}`,
       margin: "2px",
     },
     [theme.breakpoints.down("xs")]: {
@@ -51,36 +81,36 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up("md")]: {
       display: "inline-block",
-      width: "auto",
     },
   },
-  // search: {
-  //   position: "relative",
-  //   borderRadius: theme.shape.borderRadius,
-  //   backgroundColor: fade(theme.palette.common.white, 0.15),
-  //   "&:hover": {
-  //     backgroundColor: fade(theme.palette.common.white, 0.25),
-  //   },
-  //   marginRight: theme.spacing(2),
-  //   marginLeft: 0,
-  //   width: "100%",
-  //   [theme.breakpoints.up("sm")]: {
-  //     marginLeft: theme.spacing(3),
-  //     width: "auto",
-  //   },
-  // },
 }));
 
 export default function Header() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const classes = useStyles();
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const [visibleLogin, setVisibleLogin] = useState(true);
+  const [visibleSignup, setVisibleSignup] = useState(false);
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  //----- Function for showing Login drawer ----
+  const showDrawer = () => {
+    setVisibleLogin(true);
   };
+  const onClose = () => {
+    setVisibleLogin(false);
+  };
+  //---------------------------------------------
+
+  //----- Function for showing Signup drawer ----
+  const showDrawerSignup = () => {
+    setVisibleSignup(true);
+  };
+  const onCloseSignup = () => {
+    setVisibleSignup(false);
+  };
+  //----------------------------------------------
+  const classes = useStyles();
+  const { TabPane } = Tabs;
+  function callback(key) {
+    console.log(key);
+  }
 
   return (
     <div
@@ -88,24 +118,23 @@ export default function Header() {
         width: "100vw",
         height: "60px",
         boxShadow: "7px 7px 7px 7px #eeeeee",
-        border: "1px solid #f5f5f5",
+        backgroundColor: `${oranges}`,
       }}
     >
       <Grid container>
         <Grid item xs={6}>
           <Grid container>
             <Grid item xs={6} style={{ textAlign: "right" }}>
-              <Image
-                as="div"
-                src="phubielogo.png"
-                size="tiny"
-                alt="phubie logo"
-                rounded
-                style={{ width: "60px", height: "160px", textAlign: "right" }}
-              />
-            </Grid>
-            <Grid item xs={6} style={{ paddingTop: "10px", textAlign: "left" }}>
-              <TextLogoJs style={{ textAlign: "left" }} />
+              <Link to="/">
+                <Image
+                  as="div"
+                  src={phubieLogo}
+                  size="tiny"
+                  alt="phubie logo"
+                  rounded
+                  style={{ width: "120px", height: "65px", textAlign: "right" }}
+                />
+              </Link>
             </Grid>
           </Grid>
         </Grid>
@@ -119,51 +148,155 @@ export default function Header() {
               style={{ textAlign: "right", paddingTop: "5px" }}
             >
               <div className={classes.list}>
-                <Tab
-                  menu={{ secondary: true, pointing: true }}
-                  panes={panes}
-                  style={{
-                    width: "auto",
-                    display: "inline-block",
-                    marginRight: "20px",
-                  }}
-                />
-              </div>
+                <Tabs
+                  defaultActiveKey="1"
+                  onChange={callback}
+                  centered
+                  style={{ color: "white" }}
+                >
+                  <TabPane tab="About Us" key="1" />
 
-              <Button variant="contained" className={classes.bigBtn}>
+                  <TabPane tab="Feature" key="2" />
+                </Tabs>
+              </div>
+              <Btn
+                shape="round"
+                className={classes.bigBtn}
+                onClick={showDrawer}
+              >
                 Login
-              </Button>
-              <Button variant="contained" className={classes.bigBtn}>
+              </Btn>
+              <Btn
+                shape="round"
+                className={classes.bigBtn}
+                onClick={showDrawerSignup}
+              >
+                {" "}
                 Signup
-              </Button>
+              </Btn>
             </Grid>
             <Grid
               item
               xs={12}
               sm={false}
-              style={{ textAlign: "right", paddingTop: "0" }}
+              style={{ textAlign: "right", paddingTop: "10px" }}
             >
-              <Button
-                className={classes.btn}
-                startIcon={
-                  <MenuIcon style={{ color: "#9e9e9e", fontSize: "50px" }} />
-                }
-                onClick={handleClick}
-              ></Button>
-              <Menu
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-              >
-                <MenuItem>Login</MenuItem>
-                <MenuItem>Signup</MenuItem>
-                <MenuItem>Support</MenuItem>
-              </Menu>
+              <Space direction="vertical" className={classes.btn}>
+                <Dropdown
+                  overlay={
+                    <MenuChange
+                      clickLogin={showDrawer}
+                      clickSignup={showDrawerSignup}
+                    />
+                  }
+                  placement="bottomLeft"
+                >
+                  <Btn
+                    shape="round"
+                    icon={<MenuOutlined style={{ color: "white" }} />}
+                    style={{ backgroundColor: `${oranges}` }}
+                  ></Btn>
+                </Dropdown>
+              </Space>
             </Grid>
           </Grid>
         </Grid>
       </Grid>
+      {/**
+       * Login Drawer
+       */}
+      <Drawer
+        width="320"
+        title={
+          <div>
+            <Btn
+              icon={<CloseOutlined />}
+              shape="circle"
+              onClick={onClose}
+            ></Btn>
+            <br />
+            <br />
+            <h1
+              style={{
+                fontWeight: "bolder",
+                fontFamily: "Indie Flower",
+                color: `${oranges}`,
+              }}
+            >
+              Login Account
+            </h1>
+          </div>
+        }
+        placement="right"
+        closable={false}
+        onClose={onClose}
+        visible={visibleLogin}
+      >
+        <div
+          style={{
+            height: "120px",
+            backgroundColor: `${oranges}`,
+            textAlign: "center",
+          }}
+        >
+          <Image src={phubieP} alt="Phubie" size="small" as="div" />
+        </div>
+        <br />
+        <Login
+          clickedSignup={() => {
+            onClose();
+            showDrawerSignup();
+          }}
+        />
+      </Drawer>
+
+      {/**
+       * Signup drawer
+       */}
+      <Drawer
+        title={
+          <div>
+            <Btn
+              icon={<CloseOutlined />}
+              shape="circle"
+              onClick={onCloseSignup}
+            ></Btn>
+            <br />
+            <br />
+            <h1
+              style={{
+                fontWeight: "bolder",
+                fontFamily: "Indie Flower",
+                color: `${oranges}`,
+              }}
+            >
+              Create User Account
+            </h1>
+          </div>
+        }
+        placement="right"
+        width="320"
+        closable={false}
+        onClose={onCloseSignup}
+        visible={visibleSignup}
+      >
+        <div
+          style={{
+            height: "120px",
+            backgroundColor: `${oranges}`,
+            textAlign: "center",
+          }}
+        >
+          <Image src={phubieP} alt="Phubie" size="small" as="div" />
+        </div>
+        <br />
+        <Signup
+          clickedLogin={() => {
+            onCloseSignup();
+            showDrawer();
+          }}
+        />
+      </Drawer>
     </div>
   );
 }
