@@ -10,15 +10,6 @@ export default class Main extends Component {
   render() {
     return (
       <div>
-        <Helmet>
-          <html lang="en" />
-          <title>Phubie</title>
-          <meta
-            name="description"
-            content="Phubie Online food ordering main page"
-          />
-          <meta name="theme-color" content="#E6E6FA" />
-        </Helmet>
         <Header />
         <AdvertBody />
         <Content />

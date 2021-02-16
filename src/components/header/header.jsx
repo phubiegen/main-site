@@ -101,7 +101,7 @@ export default function Header() {
                 size="tiny"
                 alt="phubie logo"
                 rounded
-                style={{ width: "60px", height: "450px", textAlign: "right" }}
+                style={{ width: "60px", height: "160px", textAlign: "right" }}
               />
             </Grid>
             <Grid item xs={6} style={{ paddingTop: "10px", textAlign: "left" }}>

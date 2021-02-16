@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "semantic-ui-css/semantic.min.css";
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import "./i18nextConf";
 
 ReactDOM.render(

@@ -33,7 +33,6 @@ const data = [
 ];
 
 export default function ForRestaurants() {
-  console.log(Math.floor(Math.random() * 2));
   return (
     <div>
       <Fade left>

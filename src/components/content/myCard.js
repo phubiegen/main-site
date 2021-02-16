@@ -3,6 +3,7 @@ import { Card, Grid, makeStyles } from "@material-ui/core";
 import { Image } from "semantic-ui-react";
 import Fade from "react-reveal";
 import { oranges } from "../colors";
+import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
   descSvg: {
@@ -68,23 +69,31 @@ export default function MyCard(props) {
 
   return (
     <Fade>
-      <Card elevation={20} style={{ height: "320px" }}>
-        <Grid container>
-          <Grid
-            item
-            xs={12}
-            style={{ textAlign: "center", paddingTop: "10px" }}
-          >
-            <Image as="div" src={props.src} className={classes.descSvg} />
+      <motion.div
+        whileHover={{
+          scale: 1.05,
+
+          transition: { duration: 0.3 },
+        }}
+      >
+        <Card elevation={20} style={{ height: "320px" }}>
+          <Grid container>
+            <Grid
+              item
+              xs={12}
+              style={{ textAlign: "center", paddingTop: "10px" }}
+            >
+              <Image as="div" src={props.src} className={classes.descSvg} />
+            </Grid>
+            <Grid item xs={12} style={{ textAlign: "center" }}>
+              <p className={classes.title}>{props.title}</p>
+            </Grid>
+            <Grid item xs={12}>
+              <p className={classes.content}>{props.content}</p>
+            </Grid>
           </Grid>
-          <Grid item xs={12} style={{ textAlign: "center" }}>
-            <p className={classes.title}>{props.title}</p>
-          </Grid>
-          <Grid item xs={12}>
-            <p className={classes.content}>{props.content}</p>
-          </Grid>
-        </Grid>
-      </Card>
+        </Card>
+      </motion.div>
     </Fade>
   );
 }
