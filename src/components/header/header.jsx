@@ -1,24 +1,7 @@
-import {
-  Button,
-  Grid,
-  // Menu,
-  // MenuItem,
-  // fade,
-  makeStyles,
-} from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import React, { useState } from "react";
 import { Image } from "semantic-ui-react";
-import {
-  Menu,
-  Dropdown,
-  Button as Btn,
-  Space,
-  Tabs,
-  Drawer,
-  Form,
-  Input,
-  Select,
-} from "antd";
+import { Menu, Dropdown, Button as Btn, Space, Tabs, Drawer } from "antd";
 import { Link } from "react-router-dom";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { oranges } from "../colors";
@@ -26,11 +9,6 @@ import phubieLogo from "../icons/phubieOrange.png";
 import phubieP from "../icons/phubieP.png";
 import Login from "../login/login";
 import Signup from "../signup/signup";
-
-{
-  /* <MenuOutlined />
-Men */
-}
 
 const MenuChange = (props) => {
   return (
@@ -40,21 +18,6 @@ const MenuChange = (props) => {
     </Menu>
   );
 };
-
-const panes = [
-  {
-    menuItem: {
-      content: "About Us",
-      color: "orange",
-    },
-  },
-  {
-    menuItem: {
-      content: "Feature",
-      color: "orange",
-    },
-  },
-];
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -86,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Header() {
-  const [visibleLogin, setVisibleLogin] = useState(true);
+  const [visibleLogin, setVisibleLogin] = useState(false);
   const [visibleSignup, setVisibleSignup] = useState(false);
 
   //----- Function for showing Login drawer ----

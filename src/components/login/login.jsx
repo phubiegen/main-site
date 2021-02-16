@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import {
-  Menu,
-  Dropdown,
-  Button,
-  Form,
-  Input,
-  Select,
-  Divider,
-  Checkbox,
-} from "antd";
+import { Button, Form, Input, Select, Divider, Checkbox } from "antd";
 import { MailOutlined, GoogleCircleFilled } from "@ant-design/icons";
 import { oranges } from "../colors";
 const { Option } = Select;

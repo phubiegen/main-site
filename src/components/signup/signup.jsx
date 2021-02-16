@@ -1,21 +1,15 @@
 import React, { Component } from "react";
-import {
-  Menu,
-  Dropdown,
-  Button,
-  Form,
-  Input,
-  Select,
-  Divider,
-  Checkbox,
-} from "antd";
-import { MailOutlined, GoogleCircleFilled } from "@ant-design/icons";
+import { Button, Form, Input, Divider } from "antd";
+import { GoogleCircleFilled } from "@ant-design/icons";
 import { oranges } from "../colors";
-const { Option } = Select;
+// const { Option } = Select;
 
 export default class Signup extends Component {
   state = {
     name: "",
+    email: "",
+    password: "",
+    number: "",
   };
   takeInput = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -76,7 +70,11 @@ export default class Signup extends Component {
               },
             ]}
           >
-            <Input.Password placeholder="Password" />
+            <Input.Password
+              placeholder="Password"
+              name="password"
+              onChange={this.takeInput}
+            />
           </Form.Item>
           <Form.Item>
             <Button type="primary" htmlType="submit" style={{ width: "100%" }}>
