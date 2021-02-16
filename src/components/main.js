@@ -5,6 +5,7 @@ import { withTranslation } from "react-i18next";
 import AdvertBody from "./advert/advertBody";
 import Footer from "./footer/footer";
 import Content from "./content/content";
+import LinksToPage from "./linksPage/linksToPage";
 
 export default class Main extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class Main extends Component {
         <Header />
         <AdvertBody />
         <Content />
+        <LinksToPage />
         <Footer />
       </div>
     );
