@@ -328,10 +328,10 @@ export default function Footer() {
             height: "2px",
             color: "#bdbdbd",
             backgroundColor: "#bdbdbd",
-            marginBottom: "10px",
+            marginBottom: "20px",
           }}
         />
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", marginBottom: "90px" }}>
           <p>
             Copyright @2020 <strong>Phubie</strong>
           </p>

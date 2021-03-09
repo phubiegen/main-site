@@ -4,7 +4,7 @@ import restaurantShopSvg from "../../svgs/restaurant.svg";
 import motorSvg from "../../svgs/motor1.svg";
 import downloadApp from "../../svgs/downloadApp.svg";
 import Fade from "react-reveal/Fade";
-import { oranges } from "../colors";
+import { oranges, violet } from "../colors";
 import { Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
@@ -16,28 +16,24 @@ const useStyles = makeStyles((theme) => ({
   title: {
     [theme.breakpoints.down("xs")]: {
       fontSize: "15px",
-      color: `${oranges}`,
+      color: `${violet}`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
     [theme.breakpoints.up("xs")]: {
       fontSize: "15px",
-      color: `${oranges}`,
+      color: `${violet}`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
     [theme.breakpoints.up("sm")]: {
       fontSize: "20px",
-      color: `${oranges}`,
+      color: `${violet}`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
     [theme.breakpoints.up("md")]: {
       fontSize: "25px",
       fontWeight: "bold",
-      color: `${oranges}`,
+      color: `${violet}`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
   },
   text2: {

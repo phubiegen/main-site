@@ -38,7 +38,7 @@ const content = [
   {
     src: mapSVG,
     title: "Live Order Tracking",
-    content: `You get to track your orders through our customized timelined notification. Your get to know when your 
+    content: `You get to track your orders through our customized timelined notification. Your get to know when your
     order is accepted, discharged, and the delivery personnel bringing your order.`,
   },
 ];

@@ -5,6 +5,8 @@ import { Fade, Slide } from "react-reveal";
 import { Grid, makeStyles } from "@material-ui/core";
 import { Icon, Input } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { Carousel } from "antd";
+import Pizza from "./pizza.webp";
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -53,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
       width: "auto",
     },
   },
+  divStyle: {
+    [theme.breakpoints.up("sm")]: {},
+  },
   // search: {
   //   position: "relative",
   //   borderRadius: theme.shape.borderRadius,
@@ -78,6 +83,14 @@ const content = [
   "Restaurant table booking available ",
 ];
 
+const contentStyle = {
+  height: "560px",
+  color: "white",
+  lineHeight: "160px",
+  textAlign: "center",
+  background: "#364d79",
+};
+
 export default function AdvertBody() {
   const [values, setValues] = useState(0);
   const classes = useStyles();
@@ -99,7 +112,21 @@ export default function AdvertBody() {
           paddingRight: "40px",
         }}
       >
-        <Grid container spacing={3}>
+        <Grid container>
+          <Grid item xs={false} sm={2}></Grid>
+          <Grid item xs={12} sm={8}>
+            <Carousel autoplay style={{ height: "350px", paddingTop: "100px" }}>
+              {content.map((data, index) => (
+                <div style={contentStyle}>
+                  <h1 className={classes.text2}>{data}</h1>
+                </div>
+              ))}
+            </Carousel>
+          </Grid>
+          <Grid item xs={false} sm={2}></Grid>
+        </Grid>
+
+        {/* <Grid container spacing={3}>
           <Grid item xs={12} sm={6} style={{ marginBottom: "50px" }}>
             <Fade left>
               <h1 className={classes.text}>
@@ -125,7 +152,7 @@ export default function AdvertBody() {
             <br />
             <Link to="/login">Signin</Link>
           </Grid>
-        </Grid>
+        </Grid> */}
       </div>
 
       {/* <motion.h1

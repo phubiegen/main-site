@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Grid, makeStyles } from "@material-ui/core";
 import { Image } from "semantic-ui-react";
 import Fade from "react-reveal";
-import { oranges } from "../colors";
+import { oranges, violet } from "../colors";
 import { motion } from "framer-motion";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,28 +13,24 @@ const useStyles = makeStyles((theme) => ({
   title: {
     [theme.breakpoints.down("xs")]: {
       fontSize: "15px",
-      color: `${oranges}`,
+      color: `${violet}`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
     [theme.breakpoints.up("xs")]: {
       fontSize: "15px",
-      color: `${oranges}`,
+      color: `${violet}`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
     [theme.breakpoints.up("sm")]: {
       fontSize: "20px",
-      color: `${oranges}`,
+      color: `${violet}`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
     [theme.breakpoints.up("md")]: {
       fontSize: "25px",
       fontWeight: "bold",
-      color: `${oranges}`,
+      color: `#6C63FF`,
       fontFamily: "Indie Flower",
-      color: "orange",
     },
   },
   text2: {
@@ -42,19 +38,19 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "15px",
       color: "white",
       fontFamily: "Indie Flower",
-      color: "orange",
+      color: `${violet}`,
     },
     [theme.breakpoints.up("sm")]: {
       fontSize: "20px",
       color: "white",
       fontFamily: "Indie Flower",
-      color: "orange",
+      color: `${violet}`,
     },
     [theme.breakpoints.up("md")]: {
       fontSize: "25px",
       color: "white",
       fontFamily: "Indie Flower",
-      color: "orange",
+      color: `${violet}`,
     },
   },
   content: {

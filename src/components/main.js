@@ -12,6 +12,10 @@ const Header = asyncComponent(() => {
   return import("./header/header");
 });
 
+const FooterTwo = asyncComponent(() => {
+  return import("./footer/footer2");
+});
+
 const AdvertBody = asyncComponent(() => {
   return import("./advert/advertBody");
 });
@@ -36,7 +40,8 @@ export default class Main extends Component {
         <AdvertBody />
         <Content />
         <LinksToPage />
-        <Footer />
+        {/* <Footer /> */}
+        <FooterTwo />
       </div>
     );
   }
