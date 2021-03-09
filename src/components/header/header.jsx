@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up("xs")]: {
       display: "inline-block",
       color: "white",
-      backgroundColor: `${oranges}`,
+      backgroundColor: "transparent",
+      // backgroundColor: `${oranges}`,
       margin: "2px",
     },
     [theme.breakpoints.down("xs")]: {
@@ -80,8 +81,9 @@ export default function Header() {
       style={{
         width: "100vw",
         height: "60px",
-        boxShadow: "7px 7px 7px 7px #eeeeee",
-        backgroundColor: `${oranges}`,
+        // boxShadow: "7px 7px 7px 7px #eeeeee",
+        background: "rgba(0, 0, 0, 0.7)",
+        // backgroundColor: `${oranges}`,
       }}
     >
       <Grid container>
@@ -111,7 +113,7 @@ export default function Header() {
               sm={12}
               style={{ textAlign: "right", paddingTop: "5px" }}
             >
-              <div className={classes.list}>
+              {/* <div className={classes.list}>
                 <Tabs
                   defaultActiveKey="1"
                   onChange={callback}
@@ -122,7 +124,7 @@ export default function Header() {
 
                   <TabPane tab="Feature" key="2" />
                 </Tabs>
-              </div>
+              </div> */}
               <Btn
                 shape="round"
                 className={classes.bigBtn}

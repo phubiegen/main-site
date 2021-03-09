@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import MapVector from "./map.svg";
 import Fade from "react-reveal/Fade";
-import { oranges } from "../colors";
+import { oranges, violet } from "../colors";
 import appStore2 from "./appstore2.svg";
 
 const color = "#e35f17";
@@ -186,11 +186,11 @@ export default function FooterTwo() {
               as={motion.div}
               whileHover={{
                 scale: 1.08,
-                backgroundColor: `${socialColor}`,
+                backgroundColor: `${violet}`,
                 transition: { duration: 0.1 },
               }}
               icon
-              style={{ color: "white", backgroundColor: `${color}` }}
+              style={{ color: "white", backgroundColor: `${oranges}` }}
             >
               <Ic name="facebook f" />
             </Btn>
@@ -199,10 +199,10 @@ export default function FooterTwo() {
               as={motion.div}
               whileHover={{
                 scale: 1.08,
-                backgroundColor: `${socialColor}`,
+                backgroundColor: `${violet}`,
                 transition: { duration: 0.1 },
               }}
-              style={{ color: "white", backgroundColor: `${color}` }}
+              style={{ color: "white", backgroundColor: `${oranges}` }}
             >
               <Ic name="twitter" />
             </Btn>
@@ -212,25 +212,27 @@ export default function FooterTwo() {
               as={motion.div}
               whileHover={{
                 scale: 1.08,
-                backgroundColor: `${socialColor}`,
+                backgroundColor: `${violet}`,
                 transition: { duration: 0.1 },
               }}
-              style={{ color: "white", backgroundColor: `${color}` }}
+              style={{ color: "white", backgroundColor: `${oranges}` }}
             >
               <Ic name="instagram" />
             </Btn>
-            <Btn
-              icon
-              as={motion.div}
-              whileHover={{
-                scale: 1.08,
-                backgroundColor: `${socialColor}`,
-                transition: { duration: 0.1 },
-              }}
-              style={{ color: "white", backgroundColor: `${color}` }}
-            >
-              <Ic name="linkedin" />
-            </Btn>
+            <a href="https://www.linkedin.com/company/phubie/">
+              <Btn
+                icon
+                as={motion.div}
+                whileHover={{
+                  scale: 1.08,
+                  backgroundColor: `${violet}`,
+                  transition: { duration: 0.1 },
+                }}
+                style={{ color: "white", backgroundColor: `${oranges}` }}
+              >
+                <Ic name="linkedin" />
+              </Btn>
+            </a>
           </Grid>
           <Grid item xs={false} sm={2}></Grid>
         </Grid>

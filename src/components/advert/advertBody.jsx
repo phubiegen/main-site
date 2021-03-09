@@ -7,6 +7,7 @@ import { Icon, Input } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import { Carousel } from "antd";
 import Pizza from "./pizza.webp";
+import Header from "../header/header";
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -102,6 +103,11 @@ export default function AdvertBody() {
   }, [values]);
   return (
     <div className="advertBody">
+      <Grid container>
+        <Grid item xs={12}>
+          <Header />
+        </Grid>
+      </Grid>
       <div
         style={{
           width: "100%",
