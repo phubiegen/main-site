@@ -7,6 +7,7 @@ import { withTranslation } from "react-i18next";
 // import Content from "./content/content";
 // import LinksToPage from "./linksPage/linksToPage";
 import asyncComponent from "./asyncComponent/asyncComponent";
+import MapSelect from "./selections/mapSelect";
 
 const Header = asyncComponent(() => {
   return import("./header/header");
@@ -38,9 +39,11 @@ export default class Main extends Component {
       <div>
         {/* <Header /> */}
         <AdvertBody />
+        <MapSelect />
         <Content />
         <LinksToPage />
         {/* <Footer /> */}
+
         <FooterTwo />
       </div>
     );

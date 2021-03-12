@@ -85,7 +85,7 @@ const content = [
 ];
 
 const contentStyle = {
-  height: "560px",
+  height: "530px",
   color: "white",
   lineHeight: "160px",
   textAlign: "center",
@@ -111,7 +111,7 @@ export default function AdvertBody() {
       <div
         style={{
           width: "100%",
-          height: "100%",
+          height: "89%",
           background: "rgba(0, 0, 0, 0.7)",
           paddingTop: "170px",
           paddingLeft: "10px",
@@ -121,7 +121,7 @@ export default function AdvertBody() {
         <Grid container>
           <Grid item xs={false} sm={2}></Grid>
           <Grid item xs={12} sm={8}>
-            <Carousel autoplay style={{ height: "350px", paddingTop: "100px" }}>
+            <Carousel autoplay style={{ height: "300px", paddingTop: "100px" }}>
               {content.map((data, index) => (
                 <div style={contentStyle}>
                   <h1 className={classes.text2}>{data}</h1>

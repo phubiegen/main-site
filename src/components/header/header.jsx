@@ -5,7 +5,7 @@ import { Menu, Dropdown, Button as Btn, Space, Tabs, Drawer } from "antd";
 import { Link } from "react-router-dom";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { oranges } from "../colors";
-import phubieLogo from "../icons/phubieOrange.png";
+import phubieLogo from "./phubieWhite.png";
 import phubieP from "../icons/phubieP.png";
 import Login from "../login/login";
 import Signup from "../signup/signup";
@@ -91,15 +91,14 @@ export default function Header() {
           <Grid container>
             <Grid item xs={6} style={{ textAlign: "right" }}>
               <Link to="/">
-                Logo
-                {/* <Image
+                <Image
                   as="div"
                   src={phubieLogo}
                   size="tiny"
                   alt="phubie logo"
                   rounded
                   style={{ width: "120px", height: "65px", textAlign: "right" }}
-                /> */}
+                />
               </Link>
             </Grid>
           </Grid>
@@ -160,7 +159,7 @@ export default function Header() {
                   <Btn
                     shape="round"
                     icon={<MenuOutlined style={{ color: "white" }} />}
-                    style={{ backgroundColor: `${oranges}` }}
+                    style={{ backgroundColor: `rgba(0, 0, 0, 0.7)` }}
                   ></Btn>
                 </Dropdown>
               </Space>
