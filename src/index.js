@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import "semantic-ui-css/semantic.min.css";
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import "./i18nextConf";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.render(
   <React.StrictMode>

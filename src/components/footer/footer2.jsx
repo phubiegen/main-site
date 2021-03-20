@@ -8,6 +8,8 @@ import MapVector from "./map.svg";
 import Fade from "react-reveal/Fade";
 import { oranges, violet } from "../colors";
 import appStore2 from "./appstore2.svg";
+import { toast } from "react-toastify";
+toast.configure();
 
 const color = "#e35f17";
 const textColor = "#000";
@@ -54,9 +56,9 @@ const company = [
 ];
 
 const restaurants = [
-  { name: "Add Restaurant", url: "/add/res" },
-  { name: "Business App", url: "/business/app" },
-  { name: "Restaurant for Restaurant", url: "/products" },
+  { name: "Add Restaurant", url: "https://restaurant.phubie.com" },
+  { name: "Business App", url: "https://restaurant.phubie.com" },
+  { name: "Restaurant for Restaurant", url: "https://restaurant.phubie.com" },
 ];
 
 const legal = [
@@ -110,7 +112,7 @@ export default function FooterTwo() {
           <Grid item sm={6} md={3} style={{ padding: "3px" }}>
             <h1 className={classes.header}>For Restaurant</h1>
             {restaurants.map((data, index) => (
-              <Link to={data.url}>
+              <a href={data.url}>
                 <motion.p
                   whileHover={{
                     scale: 1.02,
@@ -126,7 +128,7 @@ export default function FooterTwo() {
                 >
                   {data.name}
                 </motion.p>
-              </Link>
+              </a>
             ))}
           </Grid>
           <Grid item sm={6} md={3} style={{ padding: "3px" }}>
@@ -152,29 +154,41 @@ export default function FooterTwo() {
             ))}
           </Grid>
           <Grid item sm={6} md={3} style={{ padding: "3px" }}>
-            {/* <MobileStoreButton
-              store="ios"
-              url="https://itunes.apple.com/us/app/all-of-the-lights/id959389722?mt=8"
-              linkProps={{ title: "iOS Store Button" }}
-            /> */}
-            <div
-              style={{
-                borderRadius: "5px",
-                width: "300px",
-                height: "130px",
-                backgroundImage: `url(${appStore2})`,
-                backgroundSize: "100% 100%",
-              }}
-            ></div>
-            <div
-              style={{
-                borderRadius: "5px",
-                width: "300px",
-                height: "130px",
-                backgroundImage: `url("https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg")`,
-                backgroundSize: "100% 100%",
-              }}
-            ></div>
+            <a
+              onClick={() =>
+                toast.warn("Launch Date is 24th April, 2021.", {
+                  autoClose: "1500",
+                })
+              }
+            >
+              <div
+                style={{
+                  borderRadius: "5px",
+                  width: "300px",
+                  height: "130px",
+                  backgroundImage: `url(${appStore2})`,
+                  backgroundSize: "100% 100%",
+                }}
+              ></div>
+            </a>
+            <a
+              onClick={() =>
+                toast.warn("Launch Date is 24th April, 2021.", {
+                  autoClose: "1500",
+                })
+              }
+            >
+              {" "}
+              <div
+                style={{
+                  borderRadius: "5px",
+                  width: "300px",
+                  height: "130px",
+                  backgroundImage: `url("https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg")`,
+                  backgroundSize: "100% 100%",
+                }}
+              ></div>
+            </a>
           </Grid>
         </Grid>
       </div>

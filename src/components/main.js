@@ -7,6 +7,7 @@ import { withTranslation } from "react-i18next";
 // import Content from "./content/content";
 // import LinksToPage from "./linksPage/linksToPage";
 import asyncComponent from "./asyncComponent/asyncComponent";
+// import LaunchDate from "./lauchDate/lauch";
 import MapSelect from "./selections/mapSelect";
 
 const Header = asyncComponent(() => {
@@ -33,6 +34,10 @@ const LinksToPage = asyncComponent(() => {
   return import("./linksPage/linksToPage");
 });
 
+const LaunchDate = asyncComponent(() => {
+  return import("./lauchDate/lauch");
+});
+
 export default class Main extends Component {
   render() {
     return (
@@ -43,7 +48,7 @@ export default class Main extends Component {
         <Content />
         <LinksToPage />
         {/* <Footer /> */}
-
+        <LaunchDate />
         <FooterTwo />
       </div>
     );
